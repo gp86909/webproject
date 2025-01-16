@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RentItAll</title>
+    <style>
+        
+        body {
+            background-image: url(recources/background4.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+        }
+
+        .box {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0);
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 24px;
+            background-color: #333; 
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            box-sizing: border-box;
+            resize: none;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cancel {
+            background-color: #FFFFFF;
+            color: black;
+        }
+
+        .post {
+            background-color: red;
+            color: white;
+        }
+
+        p {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 10px;
+            color: white;
+        }
+        p a {
+            color: rgba(8, 27, 234, 0.7); 
+            text-decoration: underline; 
+        }
+    </style>
+    <script>
+        function sendEmail() {
+            const message = document.querySelector('textarea').value;
+            const email = 'pramodashen14612@gmail.com';
+            if (message.trim()) {
+                window.location.href = `mailto:${email}?subject=Question&body=${encodeURIComponent(message)}`;
+            } else {
+                alert('Please enter a message before posting.');
+            }
+        }
+
+        function cancel() {
+            window.location.href = 'index.php';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>RENTITALL</h1>
+            <textarea placeholder="Type your questions here..."></textarea>
+            <div class="buttons">
+                <button class="cancel" onclick="cancel()">Cancel</button>
+                <button class="post" onclick="sendEmail()">Post</button>
+            </div>
+            <p style="font-size:20px">Hotline: 077 8162391</p>
+            <p>Don't have an account yet? <a href="SignUp.php"><b>Click here</b> to Sign up</a></p>
+            <footer>&copy; 2025. All rights reserved.</footer>
+        </div>
+    </div>
+</body>
+</html>
